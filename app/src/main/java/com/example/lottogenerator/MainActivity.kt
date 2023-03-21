@@ -2,11 +2,12 @@ package com.example.lottogenerator
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
-import android.util.Log
 import android.widget.Button
 import android.widget.TextView
+import com.google.android.gms.ads.AdRequest
+import com.google.android.gms.ads.AdView
+import com.google.android.gms.ads.MobileAds
 
-private const val TAG = "Main"
 class MainActivity : AppCompatActivity() {
     private lateinit var btnGenerator: Button
     private lateinit var tvFirstNumber: TextView
@@ -15,6 +16,7 @@ class MainActivity : AppCompatActivity() {
     private lateinit var tvFourthNumber: TextView
     private lateinit var tvFifthNumber: TextView
     private lateinit var tvSixthNumber: TextView
+    private lateinit var mAdView : AdView
 
     private var numbers = (1..45).toList()
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -28,11 +30,15 @@ class MainActivity : AppCompatActivity() {
         tvFifthNumber = findViewById(R.id.tvFifthNumber)
         tvSixthNumber = findViewById(R.id.tvSixthNumber)
 
-        Log.i(TAG, numbers.toString())
-
         btnGenerator.setOnClickListener {
             generate()
         }
+
+        // Ads init
+        MobileAds.initialize(this) {}
+        mAdView = findViewById(R.id.adView)
+        val adRequest = AdRequest.Builder().build()
+        mAdView.loadAd(adRequest)
     }
 
     // Function that generates the random numbers
@@ -43,7 +49,6 @@ class MainActivity : AppCompatActivity() {
         }
         numSet = numSet.toSortedSet()
 
-        Log.d("numbers", numSet.toString())
         tvFirstNumber.text = numSet.elementAt(0).toString()
         tvSecondNumber.text = numSet.elementAt(1).toString()
         tvThirdNumber.text = numSet.elementAt(2).toString()

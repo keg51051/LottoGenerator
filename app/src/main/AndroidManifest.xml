@@ -11,6 +11,9 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.LottoGenerator"
         tools:targetApi="31">
+        <meta-data
+            android:name="com.google.android.gms.ads.APPLICATION_ID"
+            android:value="ca-app-pub-3013351411920370~6342162399"/>
         <activity
             android:name=".MainActivity"
             android:exported="true">

@@ -1,3 +1,5 @@
 <resources>
     <string name="app_name">LottoGenerator</string>
+    <string name="button">Button</string>
+    <string name="goodluck">I hope you\'ll have a good luck with this app.</string>
 </resources>
