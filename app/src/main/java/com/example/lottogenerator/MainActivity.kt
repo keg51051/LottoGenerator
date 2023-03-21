@@ -37,6 +37,18 @@ class MainActivity : AppCompatActivity() {
 
     // Function that generates the random numbers
     private fun generate() {
-        tvFirstNumber.text = numbers.random().toString()
+        var numSet = mutableSetOf<Int>()
+        while (numSet.size < 6) {
+            numSet.add(numbers.random())
+        }
+        numSet = numSet.toSortedSet()
+
+        Log.d("numbers", numSet.toString())
+        tvFirstNumber.text = numSet.elementAt(0).toString()
+        tvSecondNumber.text = numSet.elementAt(1).toString()
+        tvThirdNumber.text = numSet.elementAt(2).toString()
+        tvFourthNumber.text = numSet.elementAt(3).toString()
+        tvFifthNumber.text = numSet.elementAt(4).toString()
+        tvSixthNumber.text = numSet.elementAt(5).toString()
     }
 }
