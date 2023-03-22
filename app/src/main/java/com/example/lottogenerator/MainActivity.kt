@@ -20,6 +20,7 @@ class MainActivity : AppCompatActivity() {
 
     private var numbers = (1..45).toList()
     override fun onCreate(savedInstanceState: Bundle?) {
+        setTheme(R.style.Theme_LottoGenerator)
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
         btnGenerator = findViewById(R.id.btnGenerator)
