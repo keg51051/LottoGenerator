@@ -9,6 +9,8 @@
 
     <TextView
         android:id="@+id/tvFirstNumber"
+        android:textColor="@color/supereme_red"
+        android:textStyle="bold"
         android:layout_width="40dp"
         android:layout_height="48dp"
         android:layout_marginStart="15dp"
@@ -24,6 +26,8 @@
 
     <TextView
         android:id="@+id/tvSecondNumber"
+        android:textColor="@color/supereme_red"
+        android:textStyle="bold"
         android:layout_width="40dp"
         android:layout_height="48dp"
         android:layout_marginStart="15dp"
@@ -40,6 +44,8 @@
 
     <TextView
         android:id="@+id/tvThirdNumber"
+        android:textColor="@color/supereme_red"
+        android:textStyle="bold"
         android:layout_width="40dp"
         android:layout_height="48dp"
         android:layout_marginStart="15dp"
@@ -55,6 +61,8 @@
 
     <TextView
         android:id="@+id/tvFourthNumber"
+        android:textColor="@color/supereme_red"
+        android:textStyle="bold"
         android:layout_width="40dp"
         android:layout_height="48dp"
         android:layout_marginStart="15dp"
@@ -70,6 +78,8 @@
 
     <TextView
         android:id="@+id/tvFifthNumber"
+        android:textColor="@color/supereme_red"
+        android:textStyle="bold"
         android:layout_width="40dp"
         android:layout_height="48dp"
         android:layout_marginStart="15dp"
@@ -85,6 +95,8 @@
 
     <TextView
         android:id="@+id/tvSixthNumber"
+        android:textColor="@color/supereme_red"
+        android:textStyle="bold"
         android:layout_width="40dp"
         android:layout_height="48dp"
         android:layout_marginStart="15dp"
@@ -124,6 +136,7 @@
 
     <TextView
         android:id="@+id/tvGoodLuck"
+        android:textColor="@color/black"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="36dp"
