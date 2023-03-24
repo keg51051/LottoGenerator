@@ -56,5 +56,23 @@ class MainActivity : AppCompatActivity() {
         tvFourthNumber.text = numSet.elementAt(3).toString()
         tvFifthNumber.text = numSet.elementAt(4).toString()
         tvSixthNumber.text = numSet.elementAt(5).toString()
+
+        setRoundedBackground(tvFirstNumber)
+        setRoundedBackground(tvSecondNumber)
+        setRoundedBackground(tvThirdNumber)
+        setRoundedBackground(tvFourthNumber)
+        setRoundedBackground(tvFifthNumber)
+        setRoundedBackground(tvSixthNumber)
+    }
+
+    // Function for setting the numbers textview with rounded background colors like balls
+    private fun setRoundedBackground(tv: TextView) {
+        when (tv.text.toString().toInt()) {
+            in 1..10 -> tv.setBackgroundResource(R.drawable.rounded_tv_yellow)
+            in 11..20 -> tv.setBackgroundResource(R.drawable.rounded_tv_blue)
+            in 21..30 -> tv.setBackgroundResource(R.drawable.rounded_tv_red)
+            in 31..40 -> tv.setBackgroundResource(R.drawable.rounded_tv_gray)
+            else -> tv.setBackgroundResource(R.drawable.rounded_tv_lightgreen)
+        }
     }
 }
