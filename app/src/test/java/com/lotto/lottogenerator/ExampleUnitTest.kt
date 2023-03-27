@@ -1,4 +1,4 @@
-package com.example.lottogenerator
+package com.lotto.lottogenerator
 
 import org.junit.Test
 

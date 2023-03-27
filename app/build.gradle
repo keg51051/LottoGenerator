@@ -4,11 +4,11 @@ plugins {
 }
 
 android {
-    namespace 'com.example.lottogenerator'
+    namespace 'com.lotto.lottogenerator'
     compileSdk 33
 
     defaultConfig {
-        applicationId "com.example.lottogenerator"
+        applicationId "com.lotto.lottogenerator"
         minSdk 24
         targetSdk 33
         versionCode 1
@@ -19,7 +19,8 @@ android {
 
     buildTypes {
         release {
-            minifyEnabled false
+            shrinkResources true
+            minifyEnabled true
             proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
         }
     }
@@ -45,5 +46,5 @@ dependencies {
 
 dependencies {
     implementation 'com.google.android.gms:play-services-ads:21.5.0'
-    implementation 'androidx.core:core-splashscreen:1.0.0-beta02'
+    implementation 'androidx.core:core-splashscreen:1.1.0-alpha01'
 }
