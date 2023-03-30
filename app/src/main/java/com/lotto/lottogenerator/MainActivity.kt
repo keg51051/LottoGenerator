@@ -1,6 +1,7 @@
 package com.lotto.lottogenerator
 
 import android.os.Bundle
+import android.util.Log
 import android.widget.Button
 import android.widget.TextView
 import androidx.appcompat.app.AppCompatActivity
@@ -20,6 +21,8 @@ class MainActivity : AppCompatActivity() {
     private lateinit var mAdView : AdView
 
     private var numbers = (1..45).toList()
+    private var numSet = mutableSetOf<Int>()
+    private var numList = listOf<Int>()
     override fun onCreate(savedInstanceState: Bundle?) {
         setTheme(R.style.Theme_LottoGenerator)
         super.onCreate(savedInstanceState)
@@ -44,13 +47,14 @@ class MainActivity : AppCompatActivity() {
         mAdView.loadAd(adRequest)
 
         btnSave.setOnClickListener {
-
+            numList = numSet.toList()
+            Log.d("list", numList.toString())
         }
     }
 
     // Function that generates the random numbers
     private fun generate() {
-        var numSet = mutableSetOf<Int>()
+        numSet.clear()
         while (numSet.size < 6) {
             numSet.add(numbers.random())
         }
