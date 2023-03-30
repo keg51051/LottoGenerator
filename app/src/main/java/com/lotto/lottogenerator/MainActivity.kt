@@ -9,7 +9,8 @@ import com.google.android.gms.ads.AdView
 import com.google.android.gms.ads.MobileAds
 
 class MainActivity : AppCompatActivity() {
-    private lateinit var btnGenerator: Button
+    private lateinit var btnGenerate: Button
+    private lateinit var btnSave: Button
     private lateinit var tvFirstNumber: TextView
     private lateinit var tvSecondNumber: TextView
     private lateinit var tvThirdNumber: TextView
@@ -23,15 +24,16 @@ class MainActivity : AppCompatActivity() {
         setTheme(R.style.Theme_LottoGenerator)
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
-        btnGenerator = findViewById(R.id.btnGenerator)
+        btnGenerate = findViewById(R.id.btnGenerate)
         tvFirstNumber = findViewById(R.id.tvFirstNumber)
         tvSecondNumber = findViewById(R.id.tvSecondNumber)
         tvThirdNumber = findViewById(R.id.tvThirdNumber)
         tvFourthNumber = findViewById(R.id.tvFourthNumber)
         tvFifthNumber = findViewById(R.id.tvFifthNumber)
         tvSixthNumber = findViewById(R.id.tvSixthNumber)
+        btnSave = findViewById(R.id.btnSave)
 
-        btnGenerator.setOnClickListener {
+        btnGenerate.setOnClickListener {
             generate()
         }
 
@@ -40,6 +42,10 @@ class MainActivity : AppCompatActivity() {
         mAdView = findViewById(R.id.adView)
         val adRequest = AdRequest.Builder().build()
         mAdView.loadAd(adRequest)
+
+        btnSave.setOnClickListener {
+
+        }
     }
 
     // Function that generates the random numbers
