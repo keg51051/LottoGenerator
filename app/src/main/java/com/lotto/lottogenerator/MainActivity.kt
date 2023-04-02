@@ -47,6 +47,7 @@ class MainActivity : AppCompatActivity() {
         mAdView.loadAd(adRequest)
 
         btnSave.setOnClickListener {
+            // Convert numSet to List for saving in the DB
             numList = numSet.toList()
             Log.d("list", numList.toString())
         }
