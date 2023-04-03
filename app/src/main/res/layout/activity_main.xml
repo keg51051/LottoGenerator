@@ -121,13 +121,16 @@
         android:id="@+id/btnGenerate"
         android:layout_width="300dp"
         android:layout_height="wrap_content"
-        android:layout_marginTop="40dp"
-        android:text="@string/btnGenerate"
+        android:layout_marginTop="50dp"
         android:background="@drawable/custom_button"
+        android:text="@string/btnGenerate"
+        android:textColor="@color/white"
+        android:textSize="18sp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.5"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/tvThirdNumber" />
+        app:layout_constraintTop_toBottomOf="@+id/tvThirdNumber"
+        tools:ignore="TextContrastCheck" />
 
     <com.google.android.gms.ads.AdView
         android:id="@+id/adView"
@@ -137,32 +140,46 @@
         android:layout_centerHorizontal="true"
         app:adSize="BANNER"
         app:adUnitId="ca-app-pub-3013351411920370/9592525159"
-        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintBottom_toBottomOf="@+id/bottom_nav_bar"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent" />
+
+    <Button
+        android:id="@+id/btnSave"
+        android:layout_width="300dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="30dp"
+        android:background="@drawable/custom_button"
+        android:text="@string/btnSave"
+        android:textColor="@color/white"
+        android:textSize="18sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/btnGenerate"
+        tools:ignore="TextContrastCheck" />
 
     <TextView
         android:id="@+id/tvGoodLuck"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="30dp"
-        android:text="@string/goodluck"
+        android:layout_marginTop="40dp"
+        android:text="@string/luck"
         android:textColor="@color/black"
-        android:textSize="20sp"
+        android:textSize="18sp"
         android:textStyle="bold"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.498"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/btnSave" />
 
-    <Button
-        android:id="@+id/btnSave"
-        android:layout_width="300dp"
+    <com.google.android.material.bottomnavigation.BottomNavigationView
+        android:id="@+id/bottom_nav_bar"
+        android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="40dp"
-        android:text="@string/btnSave"
-        android:background="@drawable/custom_button"
-        app:layout_constraintEnd_toEndOf="parent"
+        android:background="@color/supreme_red"
+        app:menu="@menu/bottom_nav_menu"
+        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/btnGenerate" />
+        app:layout_constraintEnd_toEndOf="parent"/>
+
 </androidx.constraintlayout.widget.ConstraintLayout>

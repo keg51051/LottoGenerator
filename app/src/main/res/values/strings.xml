@@ -2,5 +2,7 @@
     <string name="app_name">LottoGenerator</string>
     <string name="btnGenerate">생성</string>
     <string name="btnSave">저장</string>
-    <string name="goodluck">1등을 기원합니다!</string>
+    <string name="luck">1등을 기원합니다!</string>
+    <string name="navbar_home">홈</string>
+    <string name="navbar_repo">저장소</string>
 </resources>
