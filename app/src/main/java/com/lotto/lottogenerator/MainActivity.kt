@@ -1,13 +1,16 @@
 package com.lotto.lottogenerator
 
+import android.os.Build
 import android.os.Bundle
 import android.util.Log
 import android.widget.Button
 import android.widget.TextView
+import androidx.annotation.RequiresApi
 import androidx.appcompat.app.AppCompatActivity
 import com.google.android.gms.ads.AdRequest
 import com.google.android.gms.ads.AdView
 import com.google.android.gms.ads.MobileAds
+import com.google.android.material.bottomnavigation.BottomNavigationView
 
 class MainActivity : AppCompatActivity() {
     private lateinit var btnGenerate: Button
@@ -19,22 +22,26 @@ class MainActivity : AppCompatActivity() {
     private lateinit var tvFifthNumber: TextView
     private lateinit var tvSixthNumber: TextView
     private lateinit var mAdView : AdView
+    private lateinit var bottom_nav : BottomNavigationView
+
 
     private var numbers = (1..45).toList()
     private var numSet = mutableSetOf<Int>()
-    private var numList = listOf<Int>()
+    @RequiresApi(Build.VERSION_CODES.O)
     override fun onCreate(savedInstanceState: Bundle?) {
         setTheme(R.style.Theme_LottoGenerator)
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
         btnGenerate = findViewById(R.id.btnGenerate)
+        btnSave = findViewById(R.id.btnSave)
         tvFirstNumber = findViewById(R.id.tvFirstNumber)
         tvSecondNumber = findViewById(R.id.tvSecondNumber)
         tvThirdNumber = findViewById(R.id.tvThirdNumber)
         tvFourthNumber = findViewById(R.id.tvFourthNumber)
         tvFifthNumber = findViewById(R.id.tvFifthNumber)
         tvSixthNumber = findViewById(R.id.tvSixthNumber)
-        btnSave = findViewById(R.id.btnSave)
+        bottom_nav = findViewById(R.id.bottom_nav_bar)
+
 
         btnGenerate.setOnClickListener {
             generate()
@@ -48,9 +55,22 @@ class MainActivity : AppCompatActivity() {
 
         btnSave.setOnClickListener {
             // Convert numSet to List for saving in the DB
-            numList = numSet.toList()
-            Log.d("list", numList.toString())
+            Log.d("list", numSet.toList().toString())
         }
+
+        // Bottom Navigation Event Handler
+        bottom_nav.setOnItemSelectedListener {
+            when(it.itemId) {
+                R.id.nav_home -> {
+                }
+
+                R.id.nav_repository -> {
+                }
+            }
+            true
+        }
+
+
     }
 
     // Function that generates the random numbers
