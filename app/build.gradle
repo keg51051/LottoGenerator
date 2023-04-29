@@ -50,7 +50,6 @@ dependencies {
 }
 
 dependencies {
-    implementation 'com.google.android.gms:play-services-ads:21.5.0'
+    implementation 'com.google.android.gms:play-services-ads:22.0.0'
     implementation 'androidx.core:core-splashscreen:1.0.0-alpha01'
-
 }

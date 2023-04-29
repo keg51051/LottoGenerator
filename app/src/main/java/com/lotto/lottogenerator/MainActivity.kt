@@ -58,19 +58,6 @@ class MainActivity : AppCompatActivity() {
             Log.d("list", numSet.toList().toString())
         }
 
-        // Bottom Navigation Event Handler
-        bottom_nav.setOnItemSelectedListener {
-            when(it.itemId) {
-                R.id.nav_home -> {
-                }
-
-                R.id.nav_repository -> {
-                }
-            }
-            true
-        }
-
-
     }
 
     // Function that generates the random numbers
